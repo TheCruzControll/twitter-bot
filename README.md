@@ -1,2 +1,4 @@
 # Twitter Bot
-Making a twitter bot just to experiment with twitters api. This is a template for other projects I have in my mind.
+Making a twitter quote bot to learn how to use API's and how to webscrape using Beautiful soup.
+
+This bot Scraped about 800 quotes off of GoodReads and will tweet a random quote every few hours. 
