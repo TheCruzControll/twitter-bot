@@ -1,4 +1,4 @@
-import tweepy, time, sys, schedule, random
+import tweepy, time, schedule, random
 from config import CONSUMER_KEY,CONSUMER_SECRET,ACCESS_KEY, ACCESS_SECRET
 
 
