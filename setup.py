@@ -1,6 +1,5 @@
-import tweepy, time, random
+import tweepy, time, random, schedule
 from config import CONSUMER_KEY,CONSUMER_SECRET,ACCESS_KEY, ACCESS_SECRET
-from apscheduler.schedulers.blocking import BlockingScheduler
 
 
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
@@ -17,6 +16,11 @@ def getQuote():
 def tweetQuote():
     api.update_status(getQuote())
 
-scheduler = BlockingScheduler()
-scheduler.add_job(tweetQuote, 'interval', hours=4)
-scheduler.start()
+schedule.every().hour.do(tweetQuote)
+
+while True:
+    schedule.run_pending()
+    time.sleep(1)
+
+#to clear all functions
+#clear schedule
